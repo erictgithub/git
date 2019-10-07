@@ -1,0 +1,179 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    font-family: 'Muli', sans-serif;
+}
+
+.mainNav
+{
+    color:red;
+    font-size: 3rem;
+}
+
+.homehead
+{
+    padding-top: 6.5rem;
+}
+
+.homesec
+{
+    background-image: url("../images/mainhome.jpg");
+    background-repeat: none;
+    background-size: 100%;
+    height: 100vh;
+    border: 0.5px;
+    border-style: solid;
+    border-color: black;
+}
+
+.hometitle
+{
+    padding-top: 6rem;
+    padding-left: 8rem;
+    padding-bottom: 1rem;
+    color: white;
+    text-shadow: -0.5px 0 black, 0 0.5px black, 0.5px 0 black, 0 -0.5px black;
+}
+
+.homeform
+{
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    font-size: 1.1rem;
+}
+
+.homepageform
+{   
+    margin: 5rem;
+    height: 500px;
+    width: 400px;
+    background-color:white;
+    background-image: none;
+    border: 0.5px;
+    border-style: solid;
+    border-color: black;
+    padding-bottom: 10rem;
+}
+
+.where
+{
+    font-size: 1.75rem;
+    font-weight: bolder;
+    padding-left: 1rem;
+}
+
+.Dest, .CheckIn, .CheckOut, .Guest
+{
+    padding-left: 1rem;
+}
+
+.selDest
+{
+    width: 350px;
+}
+
+.CheckIn, .CheckOut, .guest
+{
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.adultnum, .childnum, .infantnum
+{
+    width: 150px;
+    
+}
+
+.adultsel, .childsel, .infantsel
+{
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+.div1
+{
+    padding-top: 6.5em;
+}
+
+.submitdest
+{
+    text-align: center;
+}
+
+.roomtitle, .signuptitle
+{
+    text-align: center;
+    padding-top: 1.3rem;
+}
+
+.signupform
+{
+    text-align: center;
+}
+
+.email, .firstName, .lastName, .pass
+{
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.Dest, .Checkin, .CheckOut, .Guest
+{
+    padding-top: 0.5rem;
+    padding-bottom: 1rem;
+}
+
+.row1, .row2
+{
+    display:flex;
+    flex:1;
+    max-width: 100%;
+}
+
+.room1, .room2, .room3
+{
+    padding-top: 1.5rem;
+}
+
+.room1, .room2, .room3, .room4, .room5, .room6
+{
+    padding-left: 6rem;
+    height: 450px;
+    width: 100%;
+}
+
+.rmimg
+{
+    height: 200px;
+    width: 400px;
+}
+
+.rmimg1
+{
+    background-image: url("../images/room1.jpg");
+    max-height: 100%;
+    max-width: 100%;
+    
+}
+
+.desc
+{
+    height: 275px;
+    background: white;
+    padding-top: 3rem;
+    padding-left: 5rem;
+    border: 0.5px;
+    border-style: solid;
+    border-color: black;
+    font-weight: bold;
+}
+
+.promo
+{
+    background-image:  url("images/promotions.jpg");
+    height: 200px;
+    width: auto;
+    background-position: center;
+    background-repeat: none;
+}
