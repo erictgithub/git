@@ -7,8 +7,31 @@
 
 .mainNav
 {
-    color:red;
+    color: #dc3545;
     font-size: 3rem;
+    padding-left: 2rem;
+}
+
+
+.header
+{
+    display:flex;
+    align-items: center;
+}
+
+.header a:hover
+{
+    color: black;
+}
+
+.nav.justify-content-end a
+{
+    color: black;
+}
+
+.nav.justify-content-end a:hover
+{
+    color: #dc3545;
 }
 
 .homehead
@@ -25,15 +48,6 @@
     border: 0.5px;
     border-style: solid;
     border-color: black;
-}
-
-.hometitle
-{
-    padding-top: 6rem;
-    padding-left: 8rem;
-    padding-bottom: 1rem;
-    color: white;
-    text-shadow: -0.5px 0 black, 0 0.5px black, 0.5px 0 black, 0 -0.5px black;
 }
 
 .homeform
