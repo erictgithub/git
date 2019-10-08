@@ -9,7 +9,7 @@
 {
     color: #dc3545;
     font-size: 3rem;
-    padding-left: 2rem;
+    padding-left: 3rem;
 }
 
 
@@ -26,17 +26,19 @@
 
 .nav.justify-content-end a
 {
+    font-size: 1.15rem;
     color: black;
 }
 
 .nav.justify-content-end a:hover
 {
     color: #dc3545;
+    text-decoration: underline;
 }
 
 .homehead
 {
-    padding-top: 6.5rem;
+    padding-top: 3rem;
 }
 
 .homesec
@@ -48,6 +50,7 @@
     border: 0.5px;
     border-style: solid;
     border-color: black;
+    border-bottom-color: #dc3545;
 }
 
 .homeform
@@ -59,7 +62,8 @@
 
 .homepageform
 {   
-    margin: 5rem;
+    margin-top: 3rem;
+    margin-left: 8rem;
     height: 500px;
     width: 400px;
     background-color:white;
@@ -67,14 +71,13 @@
     border: 0.5px;
     border-style: solid;
     border-color: black;
-    padding-bottom: 10rem;
 }
 
 .where
 {
     font-size: 1.75rem;
     font-weight: bolder;
-    padding-left: 1rem;
+    padding-left: 1.3rem;
 }
 
 .Dest, .CheckIn, .CheckOut, .Guest
@@ -105,9 +108,42 @@
     padding-bottom: 0.5rem;
 }
 
+.promo
+{
+    margin: auto;
+    text-align: center;
+    background-color: indianred;
+    height: 100px;
+    width: 80%;
+    align-content: center;
+}
+
+.promomsg
+{
+   font-size: 2.4rem;
+   color: white;
+   padding-top: 0.25rem;
+}
+
+.disclaimer
+{
+    font-size: 0.5rem;
+    color: black;
+}
+
 .div1
 {
-    padding-top: 6.5em;
+    padding-top: 20.5rem;
+    padding-bottom: 5rem;
+    padding-left: 27.5rem;
+    width:100%;
+    height: 900px;
+}
+
+.desc
+{
+    text-align: center;
+    padding-right: 5rem;
 }
 
 .submitdest
@@ -124,6 +160,28 @@
 .signupform
 {
     text-align: center;
+    background-image: url("../images/welcome.jpg");
+    background-size: 100%;
+    height: 785px;
+    background-position-y: 800px;
+    background-repeat: none;
+}
+
+.monthsel
+{
+    padding-left: 735px;
+    padding-bottom: 1rem;
+}
+
+.monthsel, .daysel, .yearsel
+{
+    display: flex;
+    flex: 0;
+}
+
+.years
+{
+    width: 50px;
 }
 
 .email, .firstName, .lastName, .pass
@@ -140,8 +198,8 @@
 
 .row1, .row2
 {
-    display:flex;
-    flex:1;
+    display: flex;
+    flex: 1;
     max-width: 100%;
 }
 
@@ -163,14 +221,6 @@
     width: 400px;
 }
 
-.rmimg1
-{
-    background-image: url("../images/room1.jpg");
-    max-height: 100%;
-    max-width: 100%;
-    
-}
-
 .desc
 {
     height: 275px;
@@ -179,15 +229,30 @@
     padding-left: 5rem;
     border: 0.5px;
     border-style: solid;
-    border-color: black;
+    border-color: #dc3545;
     font-weight: bold;
 }
 
-.promo
+
+.confidence
 {
-    background-image:  url("images/promotions.jpg");
-    height: 200px;
-    width: auto;
-    background-position: center;
-    background-repeat: none;
+    font-weight: bold;
+}
+
+footer
+{
+    text-align: center;
+    font-size: 2rem;
+    
+}
+
+footer > a
+{
+    color: #dc3545;
+}
+
+
+footer > a:hover
+{
+    color: black;
 }
