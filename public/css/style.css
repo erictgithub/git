@@ -44,7 +44,7 @@
 .homesec
 {
     background-image: url("../images/mainhome.jpg");
-    background-repeat: none;
+    background-repeat: no-repeat;
     background-size: 100%;
     height: 100vh;
     border: 0.5px;
@@ -169,8 +169,9 @@
 
 .monthsel
 {
-    padding-left: 735px;
-    padding-bottom: 1rem;
+    display: inline-block;
+    margin: auto;
+    padding-left: calc(50vw - 100px);
 }
 
 .monthsel, .daysel, .yearsel
@@ -256,3 +257,4 @@ footer > a:hover
 {
     color: black;
 }
+
