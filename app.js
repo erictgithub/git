@@ -203,6 +203,7 @@ app.post("/login",(req,res)=>{
             if(/^[a-zA-Z0-9]{6,12}$/.test(req.body.password)) {
                 User.find({ email: req.body.email })
                 .then(user => {
+                    console.log(user);
                     if (user.length == 1 && user[0].password == req.body.password){ 
                       res.redirect('/');
                     } 

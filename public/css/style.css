@@ -5,6 +5,11 @@
     font-family: 'Muli', sans-serif;
 }
 
+p
+{
+    margin-bottom: 0rem;
+}
+
 .mainNav
 {
     color: #dc3545;
@@ -113,7 +118,6 @@
     margin: auto;
     text-align: center;
     background-color: indianred;
-    height: 100px;
     width: 80%;
     align-content: center;
 }
@@ -133,11 +137,8 @@
 
 .div1
 {
-    padding-top: 20.5rem;
-    padding-bottom: 5rem;
-    padding-left: 27.5rem;
-    width:100%;
-    height: 900px;
+    display:flex;
+    justify-content: center;
 }
 
 .desc
@@ -151,7 +152,7 @@
     text-align: center;
 }
 
-.roomtitle, .signuptitle
+.roomtitle, .signuptitle, .Login1
 {
     text-align: center;
     padding-top: 1.3rem;
@@ -167,11 +168,16 @@
     background-repeat: none;
 }
 
+.dob
+{
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+}
+
 .monthsel
 {
     display: inline-block;
     margin: auto;
-    padding-left: calc(50vw - 100px);
 }
 
 .monthsel, .daysel, .yearsel
@@ -211,7 +217,7 @@
 
 .room1, .room2, .room3, .room4, .room5, .room6
 {
-    padding-left: 6rem;
+    text-align: center;
     height: 450px;
     width: 100%;
 }
@@ -244,7 +250,6 @@ footer
 {
     text-align: center;
     font-size: 2rem;
-    
 }
 
 footer > a
@@ -258,3 +263,73 @@ footer > a:hover
     color: black;
 }
 
+.login, .Login1
+{
+    text-align: center;
+}
+
+@media only screen and (max-width: 1500px){
+    .homesec
+    {
+    background-image: url("../images/mainhome.jpg");
+    background-repeat: no-repeat;
+    background-size: 120%;
+    height: 100vh;
+    border: 0.5px;
+    border-style: solid;
+    border-color: black;
+    border-bottom-color: #dc3545;
+    }
+}
+
+@media only screen and (max-width: 1200px){
+    .homesec
+    {
+    background-image: url("../images/mainhome.jpg");
+    background-repeat: no-repeat;
+    background-size: 170%;
+    background-position-y: -150px;
+    height: 100vh;
+    border: 0.5px;
+    border-style: solid;
+    border-color: black;
+    border-bottom-color: #dc3545;
+    }
+
+    .signupform
+    {
+    text-align: center;
+    background-image: url("../images/welcome.jpg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    height: 80vh;
+    background-position-y: -100px;
+    background-repeat: none;
+    }
+}
+
+@media only screen and (max-width: 1000px){
+    .homesec
+    {
+    background-image: url("../images/mainhome.jpg");
+    background-repeat: no-repeat;
+    background-size: 250%;
+    background-position-y: -300px;
+    background-position-x: -800px;
+    height: 100vh;
+    border: 0.5px;
+    border-style: solid;
+    border-color: black;
+    border-bottom-color: #dc3545;
+    }
+}
+
+@media only screen and (max-width: 850px){
+
+    .ytvid
+    {
+        width: 600px;
+        height: 300px;
+        
+    }
+}
