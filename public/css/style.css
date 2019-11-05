@@ -324,12 +324,106 @@ footer > a:hover
     }
 }
 
+@media only screen and (max-height: 800px)
+{
+    .homeform
+    {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        font-size: 1rem;
+    }
+    
+    .homepageform
+    {   
+        margin-top: 3rem;
+        margin-left: 8rem;
+        height: 450px;
+        width: 400px;
+        background-color:white;
+        background-image: none;
+        border: 0.5px;
+        border-style: solid;
+        border-color: black;
+    }
+    
+    .where
+    {
+        font-size: 1.5rem;
+        font-weight: bolder;
+        padding-left: 1rem;
+    }
+    
+    .Dest, .CheckIn, .CheckOut, .Guest
+    {
+        padding-left: .5rem;
+    }
+    
+    .selDest
+    {
+        width: 350px;
+    }
+    
+    .CheckIn, .CheckOut, .guest
+    {
+        font-weight: bold;
+        font-size: 16px;
+    }
+    
+    .adultnum, .childnum, .infantnum
+    {
+        width: 140px;
+    }
+    
+    .adultsel, .childsel, .infantsel
+    {
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+    }
+}
+
 @media only screen and (max-width: 850px){
+
+    .homepageform
+    {
+        margin: auto;
+    }
 
     .ytvid
     {
         width: 600px;
         height: 300px;
         
+    }
+}
+
+@media only screen and (max-height: 750px) {
+    .homesec
+    {
+    background-image: url("../images/mainhome.jpg");
+    background-repeat: no-repeat;
+    background-size: 250%;
+    background-position-y: -300px;
+    background-position-x: -800px;
+    height: 130vh;
+    border: 0.5px;
+    border-style: solid;
+    border-color: black;
+    border-bottom-color: #dc3545;
+    }
+}
+
+@media only screen and (max-height: 750px) {
+    .homesec
+    {
+    background-image: url("../images/mainhome.jpg");
+    background-repeat: no-repeat;
+    background-size: 250%;
+    background-position-y: -300px;
+    background-position-x: -800px;
+    height: 130vh;
+    border: 0.5px;
+    border-style: solid;
+    border-color: black;
+    border-bottom-color: #dc3545;
     }
 }
