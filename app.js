@@ -62,17 +62,17 @@ app.get("/signup",(req,res)=>{
 
 app.post("/signup",(req,res)=>{
     const error=[];
-    
-    if(req.body.lastname=="")
-    {
-        error.push("Please enter your Lastname")
-    }
-    
+
     if(req.body.firstname=="")
     {
         error.push("Please enter your Firstname")
     }
     
+    if(req.body.lastname=="")
+    {
+        error.push("Please enter your Lastname")
+    }
+
     if(req.body.email=="")
     {
         error.push("Please enter your Email")
@@ -103,17 +103,19 @@ app.post("/signup",(req,res)=>{
         {
             error.push("Password invalid, password must be at least 6 letters or numbers.");
         }
-        if(!(/^[a-zA-Z]{2,26}$/.test(req.body.lastname)))
-        {
-        error.push("Last name invalid.")
-        }
+
         if(!(/^[a-zA-Z]{2,26}$/.test(req.body.firstname)))
         {
         error.push("First name invalid.")
         }
+        
+        if(!(/^[a-zA-Z]{2,26}$/.test(req.body.lastname)))
+        {
+        error.push("Last name invalid.")
+        }
+
         if(error.length > 0)
          {
-
           res.render("signup",
           {
              message:error

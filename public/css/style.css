@@ -333,7 +333,6 @@ footer > a:hover
     background-image: url("../images/mainhome.jpg");
     background-repeat: no-repeat;
     background-size: 170%;
-    background-position-y: -150px;
     height: 100vh;
     border: 0.5px;
     border-style: solid;
