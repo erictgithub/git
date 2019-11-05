@@ -230,6 +230,10 @@ app.post("/login",(req,res)=>{
 
 });
 
+app.get("/welcome", (req, res) =>{
+    res.render("welcome");
+});
+
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
     console.log(`Welcome to BednBreakfast Assignment 1 on PORT: ${PORT}`)

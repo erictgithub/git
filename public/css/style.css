@@ -263,9 +263,47 @@ footer > a:hover
     color: black;
 }
 
-.login, .Login1
+.loginpage, .Login1
 {
     text-align: center;
+}
+
+.loginpage
+{
+    padding-top: 20vh;
+}
+
+.loginpage
+{
+    background-image: url("../images/login.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    height: 80vh;
+    width: 100%; 
+    background-position-y: -300px;
+}
+
+.dash1
+{
+    text-align: center;
+    padding-bottom: 1.3rem;
+}
+
+.visit
+{
+    color: white;
+    text-decoration: underline;
+    text-align: center;
+    padding-top: 30vh;
+}
+
+.splash1
+{
+    background-image: url("../images/dashboard.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    height: 80vh;
+    width: 100%;
 }
 
 @media only screen and (max-width: 1500px){
@@ -300,11 +338,11 @@ footer > a:hover
     {
     text-align: center;
     background-image: url("../images/welcome.jpg");
-    background-size: 100%;
     background-repeat: no-repeat;
-    height: 80vh;
-    background-position-y: -100px;
-    background-repeat: none;
+    background-size: 100%;
+    height: 60vh;
+    width: 100%; 
+    background-position-y: -300px;
     }
 }
 
@@ -321,6 +359,48 @@ footer > a:hover
     border-style: solid;
     border-color: black;
     border-bottom-color: #dc3545;
+    }
+
+    .ytvid
+    {
+      display: none;   
+    }
+
+    .row1, .row2
+    {
+        display: block;
+        flex: 1;
+        max-width: 100%;
+    }
+
+    .signupform
+    {
+    text-align: center;
+    background-image: url("../images/welcomemobile.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    height: 60vh;
+    width: 100%; 
+    background-position-y: -100px;
+    }
+
+    .splash1
+    {
+    background-image: url("../images/dashboard.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    height: 60vh;
+    width: 100%;
+    }
+
+    .loginpage
+    {
+    background-image: url("../images/loginmobile.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    height: 60vh;
+    width: 100%; 
+    background-position-y: -100px;
     }
 }
 
@@ -379,38 +459,9 @@ footer > a:hover
         padding-top: 0.5rem;
         padding-bottom: 0.5rem;
     }
+
 }
 
-@media only screen and (max-width: 850px){
-
-    .homepageform
-    {
-        margin: auto;
-    }
-
-    .ytvid
-    {
-        width: 600px;
-        height: 300px;
-        
-    }
-}
-
-@media only screen and (max-height: 750px) {
-    .homesec
-    {
-    background-image: url("../images/mainhome.jpg");
-    background-repeat: no-repeat;
-    background-size: 250%;
-    background-position-y: -300px;
-    background-position-x: -800px;
-    height: 130vh;
-    border: 0.5px;
-    border-style: solid;
-    border-color: black;
-    border-bottom-color: #dc3545;
-    }
-}
 
 @media only screen and (max-height: 750px) {
     .homesec
