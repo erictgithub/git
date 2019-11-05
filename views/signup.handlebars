@@ -1,5 +1,7 @@
 <h1 class="signuptitle"> Sign Up </h1>
 
+
+
 <form class="signupform" method="POST" action="/signup">
 
     <div class="email">
@@ -22,7 +24,13 @@
         <input type="date" name="birthday">
    </div>
 
-        <button type="submit" class="btn btn-danger">Submit</button>
+   <div class="loginerror">
+        {{#each message}}
+        <p>{{this}}</p>
+        {{/each}}
+    </div>
+
+    <button type="submit" class="btn btn-danger">Submit</button>
 
 </form>
 

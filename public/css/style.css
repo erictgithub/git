@@ -275,12 +275,12 @@ footer > a:hover
 
 .loginpage
 {
-    background-image: url("../images/login.jpg");
+    background-image: url("../images/loginmobile.jpg");
     background-repeat: no-repeat;
     background-size: 100%;
     height: 80vh;
     width: 100%; 
-    background-position-y: -300px;
+    background-position-y: -800px;
 }
 
 .dash1
@@ -304,6 +304,13 @@ footer > a:hover
     background-size: 100%;
     height: 80vh;
     width: 100%;
+}
+
+.loginerror
+{
+    color: black;
+    font-weight: bold;
+    font-size: 1.3rem;
 }
 
 @media only screen and (max-width: 1500px){
@@ -334,13 +341,30 @@ footer > a:hover
     border-bottom-color: #dc3545;
     }
 
+    .loginerror
+    {
+        color: red;
+        font-weight: bold;
+    }
+
     .signupform
     {
     text-align: center;
-    background-image: url("../images/welcome.jpg");
+    background-image: url("../images/welcomemobile.jpg");
     background-repeat: no-repeat;
     background-size: 100%;
-    height: 60vh;
+    height: 80vh;
+    width: 100%; 
+    background-position-y: -300px;
+    }
+
+    .loginpage
+    {
+    text-align: center;
+    background-image: url("../images/loginmobile.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    height: 80vh;
     width: 100%; 
     background-position-y: -300px;
     }
@@ -349,11 +373,10 @@ footer > a:hover
 @media only screen and (max-width: 1000px){
     .homesec
     {
-    background-image: url("../images/mainhome.jpg");
+    background-image: url("../images/homemobile.jpg");
     background-repeat: no-repeat;
-    background-size: 250%;
+    background-size: 100%;
     background-position-y: -300px;
-    background-position-x: -800px;
     height: 100vh;
     border: 0.5px;
     border-style: solid;
@@ -401,6 +424,12 @@ footer > a:hover
     height: 60vh;
     width: 100%; 
     background-position-y: -100px;
+    }
+
+    .loginerror
+    {
+        color: red;
+        font-weight: bold;
     }
 }
 
@@ -478,3 +507,5 @@ footer > a:hover
     border-bottom-color: #dc3545;
     }
 }
+
+

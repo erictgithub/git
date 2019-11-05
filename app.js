@@ -91,7 +91,7 @@ app.post("/signup",(req,res)=>{
     if(error.length > 0)
       {
 
-          res.render("sign",
+          res.render("signup",
           {
              message:error
           })
@@ -101,20 +101,20 @@ app.post("/signup",(req,res)=>{
       {
         if(!(/^[a-zA-Z0-9]{6,12}$/.test(req.body.password)))
         {
-            error.push("invalid password,password must be at least 6 letters or numbers ");
+            error.push("Password invalid, password must be at least 6 letters or numbers.");
         }
-        if(!(/^[a-zA-Z]{2,20}$/.test(req.body.lastname)))
+        if(!(/^[a-zA-Z]{2,26}$/.test(req.body.lastname)))
         {
-        error.push("invalid Lastname")
+        error.push("Last name invalid.")
         }
-        if(!(/^[a-zA-Z]{2,20}$/.test(req.body.firstname)))
+        if(!(/^[a-zA-Z]{2,26}$/.test(req.body.firstname)))
         {
-        error.push("invalid Firstname")
+        error.push("First name invalid.")
         }
         if(error.length > 0)
          {
 
-          res.render("sign",
+          res.render("signup",
           {
              message:error
           })
@@ -167,7 +167,7 @@ app.post("/signup",(req,res)=>{
             }
             console.log(res);
         });
-        res.redirect("/room");
+        res.redirect("/welcome");
         }
         
         } 

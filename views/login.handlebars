@@ -10,6 +10,12 @@
         <input type="password" name="password" placeholder="Create a Password">
     </div>
 
+    <div class="loginerror">
+        {{#each message}}
+        <p>{{this}}</p>
+        {{/each}}
+    </div>
+
 
     <button type="submit" class="btn btn-danger">Submit</button>
 
