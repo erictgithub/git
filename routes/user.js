@@ -3,6 +3,7 @@ const router = express.Router();
 const bcrypt = require("bcryptjs");
 const User = require("../model/user");
 const hasAccess = require("../middleware/auth");
+const hasAccessAdmin = require("../middleware/admin");
 
 router.get("/login", (req, res) => {
     res.render("login");
@@ -36,7 +37,12 @@ router.post("/login", (req, res) => {
                         .then(isMatched => {
                             if (isMatched == true) {
                                 req.session.userInfo = user;
+                                if (user.admin){
+                                    res.redirect("/user/admin");
+                                }
+                                else {
                                 res.redirect("/user/welcome")
+                                }
                             }
                             else {
                                 errors.push("Sorry, your password does not match");
@@ -169,6 +175,10 @@ router.post("/signup", (req, res) => {
 
 router.get("/welcome", hasAccess, (req, res) => {
     res.render("welcome");
+});
+
+router.get("/admin", hasAccessAdmin, (req, res) => {
+    res.render("admin");
 });
 
 router.get("/logout", (req, res) => {
