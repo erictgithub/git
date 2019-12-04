@@ -1,6 +1,6 @@
 <h1 class="roomtitle"> Available Rooms </h1>
 
-<div class="roomcontainer">
+{{!-- <div class="roomcontainer">
   <div class="row1">
     <div class="room1">
       <a href=""><img class="rmimg" src="images/room1.jpg"></a>
@@ -59,4 +59,23 @@
       $122 CAD/night
     </div>
   </div>
-</div>
+</div> --}}
+
+<section class="displayrooms">
+  <div class="disrooms">
+  {{#each rooms}}
+    <div class="disroom">
+      <a href=""><img class="rmimg" src="uploads/{{this.roompic}}"></a>
+      <br>
+      {{this.roomtitle}}
+      <br>
+      {{this.location}}
+      <br>
+      ${{this.price}}CAD/night
+      {{#if ../user.admin}}
+      <a href="/user/edit/{{this._id}}">Edit the Room.</a>
+      {{/if}}
+    </div>
+  {{/each}}
+  </div>
+</section>

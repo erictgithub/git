@@ -1,0 +1,45 @@
+<h1 class="dash1"> Add a Room {{user.firstname}} {{user.lastname}}</h1>
+
+<form class="roomform" method="POST" action="/user/addroom" enctype="multipart/form-data">
+
+    <div class="roomTitle">
+        <input type="text" name="roomtitle" placeholder="Title">
+    </div>
+
+    <div class="location">
+        <select class="select" name="location" placeholder="Location">
+            <option value="">Where</option>
+            <option value="Toronto">Toronto</option>
+            <option value="Montreal">Montreal</option>
+            <option value="New York">New York</option>
+            <option value="California">California</option>
+        </select>
+    </div>
+
+    <div class="postalcode">
+        <input type="text" name="postalcode" placeholder="Postal/Zip Code">
+    </div>
+
+    <div class="rules">
+        <textarea name="rules" placeholder="List Some Rules."></textarea>
+    </div>
+
+    <div class="desc1">
+        <textarea name="desc" placeholder="Describe The Room"></textarea>
+    </div>
+
+    <div class="price">
+        <input type="number" name="price" placeholder="Price for a Night." min="0">
+    </div>
+
+    <input type="file" name="roompic">
+
+    <div class="roomerror">
+        {{#each message}}
+        <p>{{this}}</p>
+        {{/each}}
+    </div>
+
+    <button type="submit" class="btn btn-danger">Submit</button>
+
+</form>

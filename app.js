@@ -5,12 +5,14 @@ const session = require("express-session");
 const app = express();
 const mongoose = require('mongoose');
 const methodOverride = require('method-override');
+const fileupload = require("express-fileupload");
 require('dotenv') .config();
 
 app.use(express.static("public"));
 app.engine("handlebars", exphbs());
 app.set('view engine', 'handlebars');
 app.use(bodyParser.urlencoded({extended : false}));
+app.use(fileupload());
 
 const DBURL= "mongodb+srv://eric:BNB@cluster0-coitw.mongodb.net/BedNBreakfast?retryWrites=true&w=majority";
 mongoose.connect(DBURL, {useNewUrlParser: true,
@@ -32,6 +34,8 @@ app.use((req,res,next)=>{
     res.locals.user= req.session.userInfo;
     next();
 })
+
+
 const generalRouter = require("./routes/general");
 app.use("/", generalRouter);
 

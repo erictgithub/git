@@ -1,0 +1,45 @@
+<h1 class="dash1"> Edit a Room {{user.firstname}} {{user.lastname}}</h1>
+
+<form class="roomform" method="POST" action="/user/edit?_method=PUT" enctype="multipart/form-data">
+
+    <div class="roomTitle">
+        <input type="text" name="roomtitle" placeholder="Title" value="{{room.roomtitle}}">
+    </div>
+
+    <div class="location">
+        <select class="select" name="location" placeholder="Location" value="{{room.location}}">
+            <option value="">Where</option>
+            <option value="Toronto">Toronto</option>
+            <option value="Montreal">Montreal</option>
+            <option value="New York">New York</option>
+            <option value="California">California</option>
+        </select>
+    </div>
+
+    <div class="postalcode">
+        <input type="text" name="postalcode" placeholder="Postal/Zip Code" value="{{room.postalcode}}">
+    </div>
+
+    <div class="rules">
+        <textarea name="rules" placeholder="List Some Rules.">{{room.rules}}"</textarea>
+    </div>
+
+    <div class="desc1">
+        <textarea name="desc" placeholder="Describe The Room">{{room.desc}}</textarea>
+    </div>
+
+    <div class="price">
+        <input type="number" name="price" placeholder="Price for a Night." min="0" value="{{room.price}}">
+    </div>
+
+    <input type="file" name="roompic" value="{{room.roompic}}">
+
+    <div class="roomerror">
+        {{#each message}}
+        <p>{{this}}</p>
+        {{/each}}
+    </div>
+
+    <button type="submit" class="btn btn-danger">Submit</button>
+
+</form>

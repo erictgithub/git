@@ -203,11 +203,19 @@ p
     padding-bottom: 1rem;
 }
 
-.row1, .row2
+.disrooms
 {
     display: flex;
     flex: 1;
     max-width: 100%;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    text-align: center;
+}
+.disroom
+{
+    width: 30%;
+
 }
 
 .room1, .room2, .room3
@@ -314,6 +322,8 @@ footer > a:hover
 }
 
 @media only screen and (max-width: 1500px){
+
+
     .homesec
     {
     background-image: url("../images/mainhome.jpg");
@@ -328,6 +338,8 @@ footer > a:hover
 }
 
 @media only screen and (max-width: 1200px){
+
+
     .homesec
     {
     background-image: url("../images/mainhome.jpg");
@@ -370,6 +382,7 @@ footer > a:hover
 }
 
 @media only screen and (max-width: 1000px){
+
     .homesec
     {
     background-image: url("../images/homemobile.jpg");
@@ -432,8 +445,8 @@ footer > a:hover
     }
 }
 
-@media only screen and (max-height: 800px)
-{
+@media only screen and (max-height: 800px){
+
     .homeform
     {
         padding-top: 1rem;
@@ -504,6 +517,13 @@ footer > a:hover
     border-style: solid;
     border-color: black;
     border-bottom-color: #dc3545;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .disroom
+    {
+        width: 100%;
     }
 }
 

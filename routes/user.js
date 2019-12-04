@@ -4,6 +4,8 @@ const bcrypt = require("bcryptjs");
 const User = require("../model/user");
 const hasAccess = require("../middleware/auth");
 const hasAccessAdmin = require("../middleware/admin");
+const Room = require("../model/room");
+const path = require("path");
 
 router.get("/login", (req, res) => {
     res.render("login");
@@ -37,11 +39,11 @@ router.post("/login", (req, res) => {
                         .then(isMatched => {
                             if (isMatched == true) {
                                 req.session.userInfo = user;
-                                if (user.admin){
+                                if (user.admin) {
                                     res.redirect("/user/admin");
                                 }
                                 else {
-                                res.redirect("/user/welcome")
+                                    res.redirect("/user/welcome")
                                 }
                             }
                             else {
@@ -166,7 +168,7 @@ router.post("/signup", (req, res) => {
                 })
                 .catch((err) => {
                     console.log(`Task was not inserted into the database because ${err}`)
-                    res.render("signup", {message:["Email already exist."]})
+                    res.render("signup", { message: ["Email already exist."] })
                 });
         }
 
@@ -179,6 +181,90 @@ router.get("/welcome", hasAccess, (req, res) => {
 
 router.get("/admin", hasAccessAdmin, (req, res) => {
     res.render("admin");
+});
+
+router.get("/addroom", hasAccessAdmin, (req, res) => {
+    res.render("addroom");
+});
+
+router.post("/addroom", hasAccessAdmin, (req, res) => {
+    const error = [];
+
+    if (req.body.roomtitle == "") {
+        error.push("Please enter a Title for the room.")
+    }
+
+    if (req.body.location == "") {
+        error.push("Please select the location of the room.")
+    }
+
+    if (req.body.postalcode == "") {
+        error.push("Please enter a Postal or a Zip Code.")
+    }
+    else {
+        if (!(/^[a-zA-Z0-9]{6}$/.test(req.body.postalcode))) {
+            error.push("Please enter a valid Postal Code or Zip Code.");
+        }
+    }
+
+    if (req.body.rules == "") {
+        error.push("Please enter Rules for the room.")
+    }
+
+    if (req.body.desc == "") {
+        error.push("Please enter a brief description of the room.")
+    }
+
+    if (req.body.price == null) {
+        error.push("Please enter a price.")
+    }
+
+    if (req.files == null) {
+        error.push("Sorry you must upload pictures of the room.")
+    }
+    else {
+        if (req.files.roompic.mimetype.indexOf("image") == -1) {
+            error.push("Sorry you can only upload images : Example (jpg,gif,png) ")
+        }
+    }
+
+    if (error.length > 0) {
+
+        res.render("addroom",
+            {
+                message: error
+            })
+    }
+    else {
+        const formData = {
+            roomtitle: req.body.roomtitle,
+            location: req.body.location,
+            postalcode: req.body.postalcode,
+            rules: req.body.rules,
+            desc: req.body.desc,
+            price: req.body.price,
+        }
+
+        const room = new Room(formData);
+        room.save()
+            .then(newroom => {
+                req.files.roompic.name = `db_${newroom._id}${path.parse(req.files.roompic.name).ext}`
+
+                req.files.roompic.mv(`public/uploads/${req.files.roompic.name}`)
+                    .then(() => {
+                        newroom.roompic = req.files.roompic.name;
+                        newroom.save()
+                        console.log(`File name was updated in the database`)
+                        res.redirect("/rooms");
+                    })
+                    .catch(err => console.log(`Error :${err}`));
+            })
+    }
+});
+
+router.get("/edit/:id", hasAccessAdmin, (req, res) => {
+    Room.findById(req.params.id)
+    .then(room => (res.render("edit", {room:room._doc})))
 });
 
 router.get("/logout", (req, res) => {

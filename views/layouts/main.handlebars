@@ -21,6 +21,11 @@
         <a class="nav-link" href="/rooms">Rooms</a>
       </li>
       {{#if user}}
+      {{#if user.admin}}
+      <li class="nav-item addroom">
+        <a class="nav-link" href="/user/addroom">Add a Room</a></li>
+
+      {{/if}}
       <li class="nav-item logout">
         <a class="nav-link" href="/user/logout">Logout</a></li>
       {{else}}
