@@ -13,6 +13,13 @@ router.get("/rooms",(req,res)=>{
     .then(rooms => {
         res.render("rooms", {rooms})
     });
+}); 
+
+router.get("/roomdisplay/:id", (req, res)=>{
+    Room.findById(req.params.id)
+    .then(room => {
+        res.render("roomdisplay", {room})
+    });
 });
 
 module.exports = router;

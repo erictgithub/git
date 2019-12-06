@@ -65,15 +65,18 @@
   <div class="disrooms">
   {{#each rooms}}
     <div class="disroom">
-      <a href=""><img class="rmimg" src="uploads/{{this.roompic}}"></a>
+      <a href="/roomdisplay/{{this._id}}"><img class="rmimg" src="uploads/{{this.roompic}}"></a>
       <br>
       {{this.roomtitle}}
       <br>
       {{this.location}}
       <br>
       ${{this.price}}CAD/night
+      <br>
       {{#if ../user.admin}}
-      <a href="/user/edit/{{this._id}}">Edit the Room.</a>
+      <a href="/user/edit/{{this._id}}" class="editlink">Edit the Room</a>
+      {{else}}
+      <a href="/user/booking/{{this._id}}" class="editlink">Book this Room</a>
       {{/if}}
     </div>
   {{/each}}

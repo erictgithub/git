@@ -6,4 +6,22 @@
         Check out available rooms to Book!
     </h3>
     </a>
+    <section class="displayrooms">
+</section>
 </div>
+  
+  <div class="disrooms">
+  {{#each books}}
+    <div class="disroom">
+      <a href="/roomdisplay/{{this.roomId}}"><img class="rmimg" src="/uploads/{{this.roompic}}"></a>
+      <br>
+      {{this.roomtitle}}
+      <br>
+      {{this.location}}
+      <br>
+      ${{this.price}}CAD/night
+      <br>
+    </div>
+  {{/each}}
+  </div>
+

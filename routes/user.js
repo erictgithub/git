@@ -6,6 +6,7 @@ const hasAccess = require("../middleware/auth");
 const hasAccessAdmin = require("../middleware/admin");
 const Room = require("../model/room");
 const path = require("path");
+const Book = require("../model/book");
 
 router.get("/login", (req, res) => {
     res.render("login");
@@ -176,7 +177,8 @@ router.post("/signup", (req, res) => {
 });
 
 router.get("/welcome", hasAccess, (req, res) => {
-    res.render("welcome");
+    Book.find({userId: req.session.userInfo._id})
+    .then(books => res.render("welcome", {books})) 
 });
 
 router.get("/admin", hasAccessAdmin, (req, res) => {
@@ -266,6 +268,45 @@ router.get("/edit/:id", hasAccessAdmin, (req, res) => {
     Room.findById(req.params.id)
     .then(room => (res.render("edit", {room:room._doc})))
 });
+
+router.put("/edit/:id", hasAccessAdmin, (req, res) => {
+    Room.findById(req.params.id)
+    .then(room=> {
+        room.roomtitle = req.body.roomtitle;
+        if(req.body.location) room.location = req.body.location;
+        room.postalcode = req.body.postalcode;
+        room.rules = req.body.rules;
+        room.desc = req.body.desc;
+        room.price = req.body.price;
+        room.save()
+        .then(() => res.redirect('/rooms'))
+    })
+    .catch((error) => {
+        res.redirect(`/user/edit/${req.params.id}`)
+        console.log(`Something went wrong.`)})
+});
+
+router.get("/booking/:id", hasAccess, (req, res) =>{
+    Room.findById(req.params.id)
+    .then(room=> {
+        const booking = {
+            roomId: room._id,
+            userId: req.session.userInfo._id,
+            roomtitle: room.roomtitle,
+            location: room.location,
+            postalcode: room.postalcode,
+            price: room.price,
+            roompic: room.roompic
+        }
+        const newbooking = new Book(booking)
+        newbooking.save()
+        .then(() => res.redirect('/user/welcome'))
+    })
+    .catch((error) => {
+        res.redirect(`/rooms`)
+        console.log(`Something went wrong.`)})
+});
+
 
 router.get("/logout", (req, res) => {
     req.session.destroy();

@@ -1,6 +1,6 @@
 <h1 class="dash1"> Edit a Room {{user.firstname}} {{user.lastname}}</h1>
 
-<form class="roomform" method="POST" action="/user/edit?_method=PUT" enctype="multipart/form-data">
+<form class="roomform" method="POST" action="/user/edit/{{room._id}}?_method=PUT" enctype="multipart/form-data">
 
     <div class="roomTitle">
         <input type="text" name="roomtitle" placeholder="Title" value="{{room.roomtitle}}">
@@ -21,7 +21,7 @@
     </div>
 
     <div class="rules">
-        <textarea name="rules" placeholder="List Some Rules.">{{room.rules}}"</textarea>
+        <textarea name="rules" placeholder="List Some Rules.">{{room.rules}}</textarea>
     </div>
 
     <div class="desc1">
@@ -32,7 +32,7 @@
         <input type="number" name="price" placeholder="Price for a Night." min="0" value="{{room.price}}">
     </div>
 
-    <input type="file" name="roompic" value="{{room.roompic}}">
+    <input type="file" class="picture" name="roompic" value="{{room.roompic}}">
 
     <div class="roomerror">
         {{#each message}}

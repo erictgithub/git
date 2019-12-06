@@ -18,6 +18,8 @@ p
 }
 
 
+
+
 .header
 {
     display:flex;
@@ -76,6 +78,7 @@ p
     border: 0.5px;
     border-style: solid;
     border-color: black;
+    border-radius: 5px;
 }
 
 .where
@@ -88,23 +91,26 @@ p
 .Dest, .CheckIn, .CheckOut, .Guest
 {
     padding-left: 1rem;
+    
 }
 
 .selDest
 {
     width: 350px;
+    border-radius: 5px;
 }
 
 .CheckIn, .CheckOut, .guest
 {
     font-weight: bold;
     font-size: 20px;
+    border-radius: 5px;
 }
 
 .adultnum, .childnum, .infantnum
 {
     width: 150px;
-    
+    border-radius: 5px;
 }
 
 .adultsel, .childsel, .infantsel
@@ -120,6 +126,7 @@ p
     background-color: indianred;
     width: 80%;
     align-content: center;
+    border-radius: 5px;
 }
 
 .promomsg
@@ -172,6 +179,7 @@ p
 {
     padding-top: 1rem;
     padding-bottom: 2rem;
+    border-radius: 5px;
 }
 
 .monthsel
@@ -232,8 +240,8 @@ p
 
 .rmimg
 {
-    height: 200px;
-    width: 400px;
+    height: 150px;
+    width: 300px;
 }
 
 .desc
@@ -319,6 +327,45 @@ footer > a:hover
     color: black;
     font-weight: bold;
     font-size: 1.3rem;
+}
+
+.roomform
+{
+    text-align: center;
+    border-style: solid;
+    border-width: 1px;
+    padding: 1rem;
+    border-color: #dc3545;
+    border-left: none;
+    border-right: none;
+}
+
+.select
+{
+    width: 15%;
+}
+
+.roomTitle, .location, .postalcode, .rules, .desc1, .price, .picture
+{
+
+    padding: .5rem;
+}
+
+.picture
+{
+    padding-left: 8rem;
+    padding-bottom: 1.5rem;
+    padding-top: 1.5rem;
+}
+
+.editlink
+{
+    color: #dc3545
+}
+
+.editlink:hover
+{
+    color: black;
 }
 
 @media only screen and (max-width: 1500px){
