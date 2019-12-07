@@ -1,25 +1,30 @@
 <h1 class="dash1">{{room.roomtitle}}</h1>
-
+    <div class="roomdisplay">
     <div class="disroompic">
-        <img src="/uploads/{{room.roompic}}"></img>
+        <img class="pictureofrm" src="/uploads/{{room.roompic}}"></img>
     </div>
-
+    <br>
     <div class="dislocation">
-        <p>{{room.location}}</p>
+        <p>City:<br>
+         {{room.location}}</p>
     </div>
 
     <div class="dispostalcode">
-        <p>{{room.postalcode}}</p>
+        <p>Postal Code or Zip Code:<br>
+         {{room.postalcode}}</p>
     </div>
 
     <div class="disrules">
-        <p>{{room.rules}}</p>
+        <p>Rules:<br>
+         {{room.rules}}</p>
     </div>
 
     <div class="disdesc">
-        <p>{{room.desc}}</p> 
+        <p>Description:<br>
+        {{room.desc}}</p> 
     </div>
 
     <div class="disprice">
-        <p>{{room.price}}</p>
+        <p>${{room.price}}CAD/night</p>
+    </div>
     </div>
