@@ -14,7 +14,7 @@ app.set('view engine', 'handlebars');
 app.use(bodyParser.urlencoded({extended : false}));
 app.use(fileupload());
 
-const DBURL= "mongodb+srv://eric:BNB@cluster0-coitw.mongodb.net/BedNBreakfast?retryWrites=true&w=majority";
+const DBURL= `mongodb+srv://${process.env.mongodbuser}:${process.env.mongodbpass}@cluster0-coitw.mongodb.net/${process.env.mongo_db}?retryWrites=true&w=majority`;
 mongoose.connect(DBURL, {useNewUrlParser: true,
                     useUnifiedTopology: true})
 
