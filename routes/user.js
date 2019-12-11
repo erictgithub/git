@@ -65,7 +65,7 @@ router.post("/login", (req, res) => {
 
         else {
             res.render("login", {
-                message: ["Password must have letters and numbers only"]
+                message: ["Incorrect Email or Password."]
             })
         }
     }
